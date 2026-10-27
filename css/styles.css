@@ -47,6 +47,17 @@ h3 { font-size: 20px; margin-bottom: 6px; }
 @media (max-width: 820px) {
   .grid-2, .grid-3 { grid-template-columns: 1fr; }
   section { padding: 64px 0; }
+  .hero { padding: 72px 0 48px; }
+  .hero h1 { font-size: clamp(34px, 9vw, 52px); }
+  .card { padding: 20px; }
+  .hero-meta { gap: 16px; }
+  .hero-meta .stat .num { font-size: 22px; }
+  .menu-btn { display: inline-flex; }
+  .navlinks { display: none; position: absolute; top: 64px; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 8px; padding: 16px 24px; background: var(--bg-elev); border-bottom: 1px solid var(--line); box-shadow: var(--shadow); }
+  .navlinks.open { display: flex; }
+  .navlinks a { padding: 8px 0; }
+  .navlinks .lang-switch, .navlinks .toggle { align-self: flex-start; }
+  nav.top { position: sticky; }
 }
 /* nav */
 nav.top {
@@ -61,6 +72,8 @@ nav .bar { display: flex; align-items: center; justify-content: space-between; h
 .navlinks a { color: var(--muted); font-size: 14px; }
 .navlinks a:hover { color: var(--fg); text-decoration: none; }
 .toggle { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border: 1px solid var(--line); border-radius: 999px; background: var(--bg-elev); color: var(--fg); cursor: pointer; font-size: 13px; }
+.menu-btn { display: none; align-items: center; justify-content: center; width: 40px; height: 40px; border: 1px solid var(--line); border-radius: 10px; background: var(--bg-elev); color: var(--fg); cursor: pointer; font-size: 20px; line-height: 1; }
+.menu-btn:hover { border-color: var(--accent); }
 .toggle:hover { border-color: var(--accent); }
 /* hero */
 .hero { padding: 112px 0 72px; }
