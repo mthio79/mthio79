@@ -109,7 +109,8 @@ nav .bar { display: flex; align-items: center; justify-content: space-between; h
 .navlinks a { font-size: var(--fs-sm); font-weight: 500; position: relative; padding: var(--space-1) 0; }
 .navlinks a:hover { color: var(--accent); }
 .navlinks a::after { content: ""; position: absolute; left: 0; bottom: 0; width: 0; height: 1px; background: var(--accent); transition: width 200ms; }
-.navlinks a:hover::after { width: 100%; }
+.navlinks a.active { color: var(--accent); }
+.navlinks a.active::after { width: 100%; background: var(--accent); }
 .toggle, .menu-btn, .lang-switch button {
   font-family: var(--font-mono); font-size: var(--fs-xs); letter-spacing: 0.1em; text-transform: uppercase;
   border: var(--border); background: transparent; color: var(--ink); cursor: pointer; padding: var(--space-2) var(--space-3);

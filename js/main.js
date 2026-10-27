@@ -42,8 +42,11 @@
     const tb = document.getElementById('themeBtn');
     if (tb) tb.addEventListener('click', toggleTheme);
 
-    const menuBtn = document.getElementById('menuBtn');
-    const navlinks = document.getElementById('navlinks');
+    const currentPage = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+    document.querySelectorAll('.navlinks a').forEach(a => {
+      const href = (a.getAttribute('href') || '').toLowerCase();
+      if (href === currentPage || (currentPage === '' && href === 'index.html')) a.classList.add('active');
+    });
     if (menuBtn && navlinks) {
       menuBtn.addEventListener('click', () => navlinks.classList.toggle('open'));
       navlinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navlinks.classList.remove('open')));
