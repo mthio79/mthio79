@@ -48,5 +48,12 @@
       menuBtn.addEventListener('click', () => navlinks.classList.toggle('open'));
       navlinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navlinks.classList.remove('open')));
     }
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('section, .card, .step');
+  revealEls.forEach(el => el.classList.add('reveal'));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
   });
 })();
