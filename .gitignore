@@ -1,0 +1,11 @@
+# Local DB / memory
+memory.db
+memory.db-shm
+memory.db-wal
+
+# Temp / OS
+.DS_Store
+Thumbs.db
+
+# Debug
+index-dbg.html
