@@ -87,3 +87,7 @@ Graduate of Universitas Ciputra (Information Multimedia & Technology) with a bal
 <p align="center">
   <i>Open to project management & product delivery opportunities.</i>
 </p>
+
+## Live Site
+
+https://basudewo.my.id
