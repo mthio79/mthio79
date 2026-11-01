@@ -1,4 +1,4 @@
-name: CI/CD - Deploy to Netlify
+name: CI/CD - Deploy to Cloudflare Pages
 
 on:
   push:
@@ -19,17 +19,13 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install Netlify CLI
-        run: npm install -g netlify-cli
+      - name: Install Wrangler
+        run: npm install -g wrangler
 
-      - name: Validate HTML
-        run: |
-          npx --yes html-validate index.html || true
-
-      - name: Deploy to Netlify
+      - name: Deploy to Cloudflare Pages
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: |
-          netlify deploy --prod --dir=. --site=$NETLIFY_SITE_ID --auth=$NETLIFY_AUTH_TOKEN
+          npx wrangler pages deploy . --project-name=basudewo --branch=main
