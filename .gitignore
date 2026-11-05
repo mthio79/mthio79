@@ -1,7 +1,10 @@
-# Local DB / memory
+﻿# Local DB / memory
 memory.db
 memory.db-shm
 memory.db-wal
+
+# Wrangler cache
+.wrangler/
 
 # Temp / OS
 .DS_Store
